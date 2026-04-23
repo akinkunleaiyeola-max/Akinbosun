@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Transaction Receipt";
+}
+
+<div class="container mt-5">
+    <div class="card shadow p-4 text-center">
+        <h3 class="text-success">✅ Transaction Successful</h3>
+        <hr />
+        <p><strong>Name:</strong> @TempData["Name"]</p>
+        <p><strong>Account Number:</strong> @TempData["Account"]</p>
+        <p><strong>Amount:</strong> ₦@TempData["Amount"]</p>
+        <p><strong>New Balance:</strong> ₦@TempData["Balance"]</p>
+        <p><strong>Date:</strong> @TempData["Date"]</p>
+        <p><strong>Description</strong> @TempData["Description"]</p>
+        <p><strong>Reference:</strong> @TempData["Reference"]</p>
+        <hr/>
+        <button onclick="window.print()" class="btn btn-primary">
+            🖨️ Print Receipt
+        </button>
+        <a asp-action="Transaction" asp-controller="Transaction_Page" class="btn btn-secondary mt-2">
+            Back
+        </a>
+    </div>
+</div>

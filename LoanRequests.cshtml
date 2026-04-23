@@ -1,0 +1,43 @@
+﻿@model List<ATMPOSONLINE.Models.Loan>
+
+@if (User.IsInRole("Admin"))
+{
+    <a asp-controller="Transactions" asp-action="LoanRequest" class="dropdown-item">
+        Manage Loans
+    </a>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Account</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var loan in Model)
+        {
+            <tr>
+                <td>@loan.AccountNumber</td>
+                <td>₦@loan.Amount</td>
+                <td>@loan.Status</td>
+                <td>
+                    @if (User.IsInRole("Admin") && loan.Status == "Pending")
+                    {
+                        <form asp-action="ApproveLoan" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@loan.Id" />
+                            <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                        </form>
+
+                        <form asp-action="RejectLoan" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@loan.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

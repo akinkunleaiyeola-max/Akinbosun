@@ -1,0 +1,16 @@
+﻿@model ATMPOSONLINE.ViewModels.TransferViewModel
+
+<div class="container mt-5">
+    <div class="card p-4 shadow">
+        <h2 class="text-center mb-4">Confirm Deposit</h2>
+    <p><strong>To:</strong> @Model.ReceiverAccountNumber</p>
+    <p><strong>Name:</strong> @Model.FullName</p>
+    <p><strong>Amount:</strong> ₦@Model.Amount</p>
+    <p><strong>Description:</strong> @Model.Description</p>
+
+    <form method="post" asp-action="ConfirmTransferSave">
+        <button class="btn btn-success">Confirm</button>
+        <a asp-action="Transfer" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</div>

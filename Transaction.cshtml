@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Transactions";
+}
+
+<section class="hero py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <div class="text-muted">Welcome back, <strong>@User.Identity.Name</strong></div>
+                }
+                <h2 class="mt-2">Transactions</h2>
+                <p class="text-muted">Quickly access deposit, transfer, withdrawal and loan features.</p>
+            </div>
+
+            <div class="text-end">
+                <a asp-controller="Transactions" asp-action="History" class="btn btn-outline-secondary">View History</a>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card feature-card h-100 text-center p-3">
+                    <div class="fs-2 mb-2">💰</div>
+                    <h5>Deposit</h5>
+                    <p class="text-muted small">Top up accounts securely and instantly.</p>
+                    <a asp-controller="Transactions" asp-action="Deposit" class="stretched-link" aria-label="Deposit"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100 text-center p-3">
+                    <div class="fs-2 mb-2">🔁</div>
+                    <h5>Transfer</h5>
+                    <p class="text-muted small">Send money to other accounts safely.</p>
+                    <a asp-controller="Transactions" asp-action="Transfer" class="stretched-link" aria-label="Transfer"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100 text-center p-3">
+                    <div class="fs-2 mb-2">🏧</div>
+                    <h5>Withdraw</h5>
+                    <p class="text-muted small">Withdraw cash from our network.</p>
+                    <a asp-controller="Transactions" asp-action="Withdraw" class="stretched-link" aria-label="Withdraw"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100 text-center p-3">
+                    <div class="fs-2 mb-2">🏦</div>
+                    <h5>Loan</h5>
+                    <p class="text-muted small">Access To quick financial loan.</p>
+                    <a asp-controller="Transactions" asp-action="ApplyLoan" class="stretched-link" aria-label="Loan"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container py-4">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="card-modern p-3">
+                <h5 class="mb-2">Quick Actions</h5>
+                <p class="text-muted small">One-click access to common transaction flows.</p>
+                <div class="d-flex gap-2 flex-wrap mt-3">
+                    <a asp-controller="Transactions" asp-action="Deposit" class="btn btn-success">Deposit</a>
+                    <a asp-controller="Transactions" asp-action="Transfer" class="btn btn-primary">Transfer</a>
+                    <a asp-controller="Transactions" asp-action="Withdraw" class="btn btn-warning">Withdraw</a>
+                    <a asp-controller="Transactions" asp-action="ApplyLoan" class="btn btn-outline-info">Apply Loan</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-modern p-3">
+                <h5 class="mb-2">Support & Info</h5>
+                <p class="text-muted small">Need help? Contact support or view FAQs.</p>
+                <div class="mt-3">
+                    <p class="mb-1"><strong>Phone:</strong> +234 805 541 0247</p>
+                    <p class="mb-1"><strong>Email:</strong> <a href="mailto:inquiry@e-platformtech.com">inquiry@e-platformtech.com</a></p>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary mt-2">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

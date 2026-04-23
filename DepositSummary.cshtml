@@ -1,0 +1,22 @@
+﻿@model ATMPOSONLINE.ViewModels.DepositViewModel
+
+<div class="container mt-5">
+    <div class="card p-4 shadow">
+        <h2 class="text-center mb-4">Confirm Deposit</h2>
+
+        <p><strong>Account Number:</strong> @Model.AccountNumber</p>
+        <p><strong>FullName:</strong>@Model.FullName</p>
+        <p><strong>Amount:</strong> ₦@Model.Amount</p>
+        <p><strong>Description:</strong> @Model.Description</p>
+        <p><strong>Reference:</strong> @Model.Description</p>
+
+        <form method="post" asp-action="ConfirmDeposit">
+            <button type="submit" class="btn btn-success w-100">
+                ✅ Confirm Deposit
+            </button>
+        </form>
+        <a asp-action="Deposit" class="btn btn-secondary w-100 mt-2">
+            ❌ Cancel
+        </a>
+    </div>
+</div>
