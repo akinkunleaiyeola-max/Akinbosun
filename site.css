@@ -1,0 +1,90 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+.home-bg {
+    background-image: url('/images/kk.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Deposit {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 40px;
+    color: white;
+}
+
+/* Receipt styles */
+.receipt-card { background: #fff; border-radius: 8px; }
+.receipt-header small { display: block; }
+.receipt-details p { clear: both; }
+.reference-box { background: #f8f9fa; border-radius: 6px; min-width: 220px; padding: 6px; }
+
+/* hide interactive controls when printing */
+.print-hide { display: inline-block; }
+@media print {
+  .print-hide, .navbar, footer, .btn { display: none !important; }
+  body { margin: 0; }
+  .receipt-card { box-shadow: none; border: none; max-width: 100%; }
+}
+
+/* Modern card and form improvements for transaction pages */
+.card-modern { background: #fff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); padding: 0; }
+.card-header-modern { padding: 18px 12px; border-bottom: 1px solid #f1f3f5; }
+.form-card { padding: 18px; }
+.quick-amounts .quick { min-width: 96px; }
+
+@media (max-width: 576px) {
+  .card-modern { padding: 12px; }
+  .quick-amounts .quick { min-width: 72px; font-size: .9rem; }
+}
+
+/* Home page styles */
+.hero { background: linear-gradient(90deg, rgba(37,140,251,0.06), rgba(0,123,255,0.03)); }
+.hero .display-5 { color: #0b4da0; }
+.feature-card { border: none; border-radius: 12px; box-shadow: 0 6px 18px rgba(22, 28, 45, 0.06); }
+.services .card { transition: transform .18s ease, box-shadow .18s ease; }
+.services .card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(22,28,45,0.08); }
+.cta { background: linear-gradient(90deg, #0d6efd, #0069d9); }
+.cta .btn-light { color: #0d6efd; }
+
+@media (max-width: 768px) {
+  .hero .display-5 { font-size: 1.8rem; }
+}
